@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json({ extended: true }));
 
 // port app
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
 // import routes
 app.use('/api/users', require('./routes/users')); 
@@ -25,10 +25,10 @@ app.use('/api/tasks', require('./routes/tasks'));
 
 // define pages
 app.get('/', (req, res) => {
-    res.send('Hola bigotin');  
+    res.send('Hola');  
 });
 
 // start app
-app.listen(PORT, () => {
-    console.log(`From the server ... (PORT: ${PORT})`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`From the server ... (PORT: ${port})`);
 });
